@@ -223,7 +223,7 @@ step "deploy-a-bicep-template-creds" {
 
             parameters {
                 Key = "storageAccountName"
-                Value = "sadflhlkhujsdkjl02"
+                Value = "sadflhlkhujsdkjl04"
             }
 
             templateSource {
@@ -274,6 +274,16 @@ step "deploy-a-bicep-template-package" {
                     account = "Accounts-41"
                     type = "account"
                 }
+            }
+
+            parameters {
+                Key = "location"
+                Value = "Australia East"
+            }
+
+            parameters {
+                Key = "storageAccountName"
+                Value = "sadflhlkhujsdkjl05"
             }
 
             templateSource {
