@@ -8,6 +8,7 @@ step "atm-template" {
             Octopus.Action.Azure.ResourceGroupDeploymentMode = "Incremental"
             Octopus.Action.Azure.ResourceGroupName = "jts-play-pen"
             Octopus.Action.Azure.ResourceGroupTemplate = "arm-package/main.json"
+            Octopus.Action.Azure.ResourceGroupTemplateParameters = "arm-package/parm.json"
             Octopus.Action.Azure.TemplateSource = "Package"
             Octopus.Action.Package.DownloadOnTentacle = "False"
             Octopus.Action.Package.FeedId = "octopus-server-built-in"
