@@ -67,7 +67,7 @@ step "deploy-a-bicep-template-ext" {
 }
 
 step "deploy-a-bicep-template-int" {
-    name = "Deploy a Bicep template int"
+    name = "Deploy a Bicep template int2"
     package_requirement = "AfterPackageAcquisition"
 
     action {
@@ -75,7 +75,6 @@ step "deploy-a-bicep-template-int" {
         step_package_version = "2.0.0"
         worker_pool = "default-worker-pool"
         worker_pool_variable = ""
-
 
         inputs {
             isCompleteMode = false
