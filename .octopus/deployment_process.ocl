@@ -3,6 +3,7 @@ step "atm-template" {
 
     action {
         action_type = "Octopus.AzureResourceGroup"
+        is_disabled = true
         properties = {
             Octopus.Action.Azure.AccountId = "my-azure-account"
             Octopus.Action.Azure.ResourceGroupDeploymentMode = "Incremental"
@@ -35,6 +36,7 @@ step "deploy-a-bicep-template-ext" {
 
     action {
         action_type = "deploy-a-bicep-template"
+        is_disabled = true
         step_package_version = "2.0.0"
         worker_pool = "default-worker-pool"
         worker_pool_variable = ""
@@ -93,6 +95,7 @@ step "deploy-a-bicep-template-int" {
 
     action {
         action_type = "deploy-a-bicep-template"
+        is_disabled = true
         step_package_version = "2.0.0"
         worker_pool = "default-worker-pool"
         worker_pool_variable = ""
@@ -141,6 +144,7 @@ step "deploy-a-bicep-template-inline" {
 
     action {
         action_type = "deploy-a-bicep-template"
+        is_disabled = true
         step_package_version = "2.0.0"
         worker_pool = "default-worker-pool"
         worker_pool_variable = ""
@@ -199,6 +203,7 @@ step "deploy-a-bicep-template-creds" {
 
     action {
         action_type = "deploy-a-bicep-template"
+        is_disabled = true
         step_package_version = "2.0.0"
         worker_pool = "default-worker-pool"
         worker_pool_variable = ""
