@@ -247,3 +247,51 @@ step "deploy-a-bicep-template-creds" {
         }
     }
 }
+
+step "deploy-a-bicep-template" {
+    name = "Deploy a Bicep template"
+    package_requirement = "AfterPackageAcquisition"
+
+    action {
+        action_type = "deploy-a-bicep-template"
+        step_package_version = "2.0.0"
+        worker_pool = "default-worker-pool"
+        worker_pool_variable = ""
+
+        git_dependencies {
+            default_branch = "main"
+            git_credential_type = "Anonymous"
+            repository_uri = "https://github.com/Jtango18/bicep-test.git"
+            step_package_inputs_reference_id = "9d79e84d-e96a-4e9b-932f-e068ae26c957"
+        }
+
+        inputs {
+            isCompleteMode = false
+            name = "Deploy a Bicep Template"
+            resourceGroup = "jts-play-pen"
+            resourceGroupLocation = "Australia East"
+
+            authentication {
+                accountType = "AzureAccount"
+
+                credentials {
+                    account = "Accounts-101"
+                    type = "oidcAccount"
+                }
+            }
+
+            templateSource {
+                relativeTemplatePath = "bicep/main.bicep"
+                type = "gitRepository"
+
+                repository {
+                    defaultBranch = "main"
+                    isAnonymous = true
+                    referenceId = "9d79e84d-e96a-4e9b-932f-e068ae26c957"
+                    type = "external"
+                    url = "https://github.com/Jtango18/bicep-test.git"
+                }
+            }
+        }
+    }
+}
