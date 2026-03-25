@@ -212,7 +212,7 @@ step "deploy-a-bicep-template-creds" {
             default_branch = "main"
             git_credential_id = "GitCredentials-1"
             git_credential_type = "Library"
-            repository_uri = "https://github.com/Jtango18/bicep-test.git"
+            repository_uri = "https://github.com/Jtango18/bicep-test"
             step_package_inputs_reference_id = "224974eb-1110-4719-baaf-3690ae9b1cce"
         }
 
@@ -241,7 +241,7 @@ step "deploy-a-bicep-template-creds" {
                     isAnonymous = false
                     referenceId = "224974eb-1110-4719-baaf-3690ae9b1cce"
                     type = "external"
-                    url = "https://github.com/OctopusDeploy/GitHubWebApp.git"
+                    url = "https://github.com/Jtango18/bicep-test"
                 }
             }
         }
