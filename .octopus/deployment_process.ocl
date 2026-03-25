@@ -149,3 +149,51 @@ step "deploy-a-bicep-template-package" {
         }
     }
 }
+
+step "deploy-a-bicep-template-inline" {
+    name = "Deploy a Bicep template Inline"
+    package_requirement = "AfterPackageAcquisition"
+
+    action {
+        action_type = "deploy-a-bicep-template"
+        step_package_version = "2.0.0"
+        worker_pool = "default-worker-pool"
+        worker_pool_variable = ""
+
+        inputs {
+            isCompleteMode = false
+            name = "Deploy a Bicep Template"
+            resourceGroup = "jts-play-pen"
+            resourceGroupLocation = "Australia East"
+
+            authentication {
+                accountType = "AzureAccount"
+
+                credentials {
+                    account = "Accounts-41"
+                    type = "account"
+                }
+            }
+
+            templateSource {
+                sourceCode = <<-EOT
+                        
+                        param location string = resourceGroup().location
+                        param storageAccountName string = 'storage${uniqueString(resourceGroup().id)}'
+                        
+                        resource storageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {
+                          name: storageAccountName
+                          location: location
+                          sku: {
+                            name: 'Standard_LRS'
+                          }
+                          kind: 'StorageV2'
+                        }
+                        
+                        output storageAccountId string = storageAccount.id
+                        EOT
+                type = "sourceCode"
+            }
+        }
+    }
+}
