@@ -3,19 +3,28 @@ step "atm-template" {
 
     action {
         action_type = "Octopus.AzureResourceGroup"
-        is_disabled = true
         properties = {
             Octopus.Action.Azure.AccountId = "my-azure-account"
             Octopus.Action.Azure.ResourceGroupDeploymentMode = "Incremental"
             Octopus.Action.Azure.ResourceGroupName = "jts-play-pen"
-            Octopus.Action.Azure.ResourceGroupTemplate = "/arm/main.json"
-            Octopus.Action.Azure.ResourceGroupTemplateParameters = "/arm/paramaters.json"
-            Octopus.Action.Azure.TemplateSource = "GitRepository"
-            Octopus.Action.GitRepository.Source = "Project"
+            Octopus.Action.Azure.ResourceGroupTemplate = "arm-package/main.json"
+            Octopus.Action.Azure.TemplateSource = "Package"
+            Octopus.Action.Package.DownloadOnTentacle = "False"
+            Octopus.Action.Package.FeedId = "octopus-server-built-in"
+            Octopus.Action.Package.PackageId = "arm-packagev1"
             OctopusUseBundledTooling = "False"
         }
         worker_pool = "default-worker-pool"
         worker_pool_variable = ""
+
+        packages {
+            acquisition_location = "Server"
+            feed = "octopus-server-built-in"
+            package_id = "arm-packagev1"
+            properties = {
+                SelectionMode = "immediate"
+            }
+        }
     }
 }
 
