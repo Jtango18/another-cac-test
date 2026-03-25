@@ -197,3 +197,53 @@ step "deploy-a-bicep-template-inline" {
         }
     }
 }
+
+step "deploy-a-bicep-template-creds" {
+    name = "Deploy a Bicep template creds"
+    package_requirement = "AfterPackageAcquisition"
+
+    action {
+        action_type = "deploy-a-bicep-template"
+        step_package_version = "2.0.0"
+        worker_pool = "default-worker-pool"
+        worker_pool_variable = ""
+
+        git_dependencies {
+            default_branch = "main"
+            git_credential_id = "GitCredentials-1"
+            git_credential_type = "Library"
+            repository_uri = "https://github.com/OctopusDeploy/GitHubWebApp.git"
+            step_package_inputs_reference_id = "224974eb-1110-4719-baaf-3690ae9b1cce"
+        }
+
+        inputs {
+            isCompleteMode = false
+            name = "Deploy a Bicep Template"
+            resourceGroup = "jts-play-pen"
+            resourceGroupLocation = "Australia East"
+
+            authentication {
+                accountType = "AzureAccount"
+
+                credentials {
+                    account = "Accounts-41"
+                    type = "account"
+                }
+            }
+
+            templateSource {
+                relativeTemplatePath = "bicep/main.bicep"
+                type = "gitRepository"
+
+                repository {
+                    defaultBranch = "main"
+                    gitCredential = "GitCredentials-1"
+                    isAnonymous = false
+                    referenceId = "224974eb-1110-4719-baaf-3690ae9b1cce"
+                    type = "external"
+                    url = "https://github.com/OctopusDeploy/GitHubWebApp.git"
+                }
+            }
+        }
+    }
+}
