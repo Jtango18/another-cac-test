@@ -229,6 +229,7 @@ step "deploy-a-bicep-template-package" {
 
     action {
         action_type = "deploy-a-bicep-template"
+        is_disabled = true
         step_package_version = "2.0.0"
         worker_pool = "default-worker-pool"
         worker_pool_variable = ""
