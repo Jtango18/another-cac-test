@@ -101,7 +101,7 @@ step "deploy-a-bicep-template-int" {
                     type = "account"
                 }
             }
-            
+
             parameters {
                 Key = "location"
                 Value = "Australia East"
@@ -119,52 +119,6 @@ step "deploy-a-bicep-template-int" {
                 repository {
                     referenceId = "4dd7aeaa-b8fc-4d8e-9aa7-5eae93ae6ee1"
                     type = "project"
-                }
-            }
-        }
-    }
-}
-
-step "deploy-a-bicep-template-package" {
-    name = "Deploy a Bicep template Package"
-    package_requirement = "AfterPackageAcquisition"
-
-    action {
-        action_type = "deploy-a-bicep-template"
-        step_package_version = "2.0.0"
-        worker_pool = "default-worker-pool"
-        worker_pool_variable = ""
-
-        packages "Octopus.Calamari.Consolidated" {
-            acquisition_location = "ExecutionTarget"
-            feed = "octopus-server-built-in"
-            package_id = "Octopus.Calamari.Consolidated"
-            step_package_inputs_reference_id = "8d534c7c-3e6a-436e-809a-b8b6725f182a"
-        }
-
-        inputs {
-            isCompleteMode = false
-            name = "Deploy a Bicep Template"
-            resourceGroup = "jts-play-pen"
-            resourceGroupLocation = "Australia East"
-
-            authentication {
-                accountType = "AzureAccount"
-
-                credentials {
-                    account = "Accounts-41"
-                    type = "account"
-                }
-            }
-
-            templateSource {
-                relativeTemplatePath = "package/main.bicep"
-                type = "package"
-
-                package {
-                    feedId = "feeds-builtin"
-                    packageId = "Octopus.Calamari.Consolidated"
-                    referenceId = "8d534c7c-3e6a-436e-809a-b8b6725f182a"
                 }
             }
         }
@@ -263,6 +217,52 @@ step "deploy-a-bicep-template-creds" {
                     referenceId = "224974eb-1110-4719-baaf-3690ae9b1cce"
                     type = "external"
                     url = "https://github.com/Jtango18/cac-test"
+                }
+            }
+        }
+    }
+}
+
+step "deploy-a-bicep-template-package" {
+    name = "Deploy a Bicep template Package"
+    package_requirement = "AfterPackageAcquisition"
+
+    action {
+        action_type = "deploy-a-bicep-template"
+        step_package_version = "2.0.0"
+        worker_pool = "default-worker-pool"
+        worker_pool_variable = ""
+
+        packages "Octopus.Calamari.Consolidated" {
+            acquisition_location = "ExecutionTarget"
+            feed = "octopus-server-built-in"
+            package_id = "Octopus.Calamari.Consolidated"
+            step_package_inputs_reference_id = "8d534c7c-3e6a-436e-809a-b8b6725f182a"
+        }
+
+        inputs {
+            isCompleteMode = false
+            name = "Deploy a Bicep Template"
+            resourceGroup = "jts-play-pen"
+            resourceGroupLocation = "Australia East"
+
+            authentication {
+                accountType = "AzureAccount"
+
+                credentials {
+                    account = "Accounts-41"
+                    type = "account"
+                }
+            }
+
+            templateSource {
+                relativeTemplatePath = "package/main.bicep"
+                type = "package"
+
+                package {
+                    feedId = "feeds-builtin"
+                    packageId = "Octopus.Calamari.Consolidated"
+                    referenceId = "8d534c7c-3e6a-436e-809a-b8b6725f182a"
                 }
             }
         }
