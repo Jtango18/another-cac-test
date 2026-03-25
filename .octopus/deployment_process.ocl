@@ -62,7 +62,7 @@ step "deploy-a-bicep-template-ext" {
             }
 
             templateSource {
-                relativeTemplatePath = "bicep/main.bicep"
+                relativeTemplatePath = "bicep/01main.bicep"
                 type = "gitRepository"
 
                 repository {
@@ -101,9 +101,19 @@ step "deploy-a-bicep-template-int" {
                     type = "account"
                 }
             }
+            
+            parameters {
+                Key = "location"
+                Value = "Australia East"
+            }
+
+            parameters {
+                Key = "storageAccountName"
+                Value = "sadflhlkhujsdkjl02"
+            }
 
             templateSource {
-                relativeTemplatePath = "bicep/main.bicep"
+                relativeTemplatePath = "bicep/02main.bicep"
                 type = "gitRepository"
 
                 repository {
