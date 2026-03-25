@@ -3,6 +3,7 @@ step "atm-template" {
 
     action {
         action_type = "Octopus.AzureResourceGroup"
+        is_disabled = true
         properties = {
             Octopus.Action.Azure.AccountId = "my-azure-account"
             Octopus.Action.Azure.ResourceGroupDeploymentMode = "Incremental"
