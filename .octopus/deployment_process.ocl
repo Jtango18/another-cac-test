@@ -149,7 +149,7 @@ step "deploy-a-bicep-template-inline" {
                     type = "account"
                 }
             }
-            
+
             parameters {
                 Key = "location"
                 Value = "Australia East"
@@ -249,15 +249,14 @@ step "deploy-a-bicep-template-package" {
 
     action {
         action_type = "deploy-a-bicep-template"
-        is_disabled = true
         step_package_version = "2.0.0"
         worker_pool = "default-worker-pool"
         worker_pool_variable = ""
 
-        packages "Octopus.Calamari.Consolidated" {
+        packages "BicepPackage.v1" {
             acquisition_location = "ExecutionTarget"
             feed = "octopus-server-built-in"
-            package_id = "Octopus.Calamari.Consolidated"
+            package_id = "BicepPackage.v1"
             step_package_inputs_reference_id = "8d534c7c-3e6a-436e-809a-b8b6725f182a"
         }
 
@@ -287,12 +286,12 @@ step "deploy-a-bicep-template-package" {
             }
 
             templateSource {
-                relativeTemplatePath = "package/main.bicep"
+                relativeTemplatePath = "BicepPackage/Template/packagemain.bicep"
                 type = "package"
 
                 package {
                     feedId = "feeds-builtin"
-                    packageId = "Octopus.Calamari.Consolidated"
+                    packageId = "BicepPackage.v1"
                     referenceId = "8d534c7c-3e6a-436e-809a-b8b6725f182a"
                 }
             }
