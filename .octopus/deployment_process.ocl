@@ -36,7 +36,6 @@ step "deploy-a-bicep-template-ext" {
 
     action {
         action_type = "deploy-a-bicep-template"
-        is_disabled = true
         step_package_version = "2.0.0"
         worker_pool = "hosted-ubuntu"
         worker_pool_variable = ""
@@ -95,7 +94,6 @@ step "deploy-a-bicep-template-int" {
 
     action {
         action_type = "deploy-a-bicep-template"
-        is_disabled = true
         step_package_version = "2.0.0"
         worker_pool = "hosted-ubuntu"
         worker_pool_variable = ""
@@ -144,7 +142,6 @@ step "deploy-a-bicep-template-inline" {
 
     action {
         action_type = "deploy-a-bicep-template"
-        is_disabled = true
         step_package_version = "2.0.0"
         worker_pool = "hosted-ubuntu"
         worker_pool_variable = ""
@@ -190,7 +187,7 @@ step "deploy-a-bicep-template-inline" {
                         }
                         
                         output storageAccountId string = storageAccount.id
-                            EOT
+                        EOT
                 type = "sourceCode"
             }
         }
@@ -203,7 +200,6 @@ step "deploy-a-bicep-template-creds" {
 
     action {
         action_type = "deploy-a-bicep-template"
-        is_disabled = true
         step_package_version = "2.0.0"
         worker_pool = "hosted-ubuntu"
         worker_pool_variable = ""
