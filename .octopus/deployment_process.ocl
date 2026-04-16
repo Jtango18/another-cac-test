@@ -43,7 +43,7 @@ step "deploy-a-bicep-template-ext" {
         git_dependencies {
             default_branch = "main"
             git_credential_type = "Anonymous"
-            repository_uri = "file:///Users/jt/Developer/Scratch/CaC/my-proj"
+            repository_uri = "https://github.com/Jtango18/another-cac-test"
             step_package_inputs_reference_id = "4dd7aeaa-b8fc-4d8e-9aa7-5eae93ae6ee1"
         }
 
@@ -81,7 +81,7 @@ step "deploy-a-bicep-template-ext" {
                     isAnonymous = true
                     referenceId = "4dd7aeaa-b8fc-4d8e-9aa7-5eae93ae6ee1"
                     type = "external"
-                    url = "file:///Users/jt/Developer/Scratch/CaC/my-proj"
+                    url = "https://github.com/Jtango18/another-cac-test"
                 }
             }
         }
