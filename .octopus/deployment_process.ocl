@@ -69,7 +69,7 @@ step "deploy-a-bicep-template-ext" {
 
             parameters {
                 Key = "storageAccountName"
-                Value = "sadflhlkhujsdkjl"
+                Value = "sadflhlkhujsdk87"
             }
 
             templateSource {
@@ -120,7 +120,7 @@ step "deploy-a-bicep-template-int" {
 
             parameters {
                 Key = "storageAccountName"
-                Value = "sadflhlkhujsdkjl02"
+                Value = "sadflhlkhujsdk8702"
             }
 
             templateSource {
@@ -168,7 +168,7 @@ step "deploy-a-bicep-template-inline" {
 
             parameters {
                 Key = "storageAccountName"
-                Value = "sadflhlkhujsdkjl03"
+                Value = "sadflhlkhujsdk8703"
             }
 
             templateSource {
@@ -234,7 +234,7 @@ step "deploy-a-bicep-template-creds" {
 
             parameters {
                 Key = "storageAccountName"
-                Value = "sadflhlkhujsdkjl04"
+                Value = "sadflhlkhujsdk8704"
             }
 
             templateSource {
@@ -293,7 +293,7 @@ step "deploy-a-bicep-template-package" {
 
             parameters {
                 Key = "storageAccountName"
-                Value = "sadflhlkhujsdkjl05"
+                Value = "sadflhlkhujsdk8705"
             }
 
             templateSource {
