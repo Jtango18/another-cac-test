@@ -190,7 +190,7 @@ step "deploy-a-bicep-template-inline" {
                         }
                         
                         output storageAccountId string = storageAccount.id
-                        EOT
+                            EOT
                 type = "sourceCode"
             }
         }
