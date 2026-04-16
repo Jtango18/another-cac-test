@@ -57,7 +57,7 @@ step "deploy-a-bicep-template-ext" {
                 accountType = "AzureAccount"
 
                 credentials {
-                    account = "Accounts-41"
+                    account = "Accounts-21"
                     type = "account"
                 }
             }
@@ -108,7 +108,7 @@ step "deploy-a-bicep-template-int" {
                 accountType = "AzureAccount"
 
                 credentials {
-                    account = "Accounts-41"
+                    account = "Accounts-21"
                     type = "account"
                 }
             }
@@ -156,7 +156,7 @@ step "deploy-a-bicep-template-inline" {
                 accountType = "AzureAccount"
 
                 credentials {
-                    account = "Accounts-41"
+                    account = "Accounts-21"
                     type = "account"
                 }
             }
@@ -222,7 +222,7 @@ step "deploy-a-bicep-template-creds" {
                 accountType = "AzureAccount"
 
                 credentials {
-                    account = "Accounts-41"
+                    account = "Accounts-21"
                     type = "account"
                 }
             }
@@ -281,7 +281,7 @@ step "deploy-a-bicep-template-package" {
                 accountType = "AzureAccount"
 
                 credentials {
-                    account = "Accounts-41"
+                    account = "Accounts-21"
                     type = "account"
                 }
             }
