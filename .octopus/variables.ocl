@@ -1,9 +1,0 @@
-variable "Octopus.Calamari.Executable" {
-    value "/Users/jt/Developer/Octopus/Calamari/source/Calamari.AzureResourceGroup/bin/Debug/net8.0/osx-x64/Calamari.AzureResourceGroup" {}
-}
-
-variable "Octopus.Calamari.WaitForDebugger" {
-    value "True" {
-        action = ["deploy-a-bicep-template-package"]
-    }
-}
